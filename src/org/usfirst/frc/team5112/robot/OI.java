@@ -1,42 +1,54 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package org.usfirst.frc.team5112.robot;
 
-/**
- * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
- */
+import org.usfirst.frc.team5112.robot.commands.DecreaseDrivetrainSpeed;
+import org.usfirst.frc.team5112.robot.commands.DriveBackwards;
+import org.usfirst.frc.team5112.robot.commands.DriveForwards;
+import org.usfirst.frc.team5112.robot.commands.IncreaseDrivetrainSpeed;
+import org.usfirst.frc.team5112.robot.commands.RotateDrivetrainClockwise;
+import org.usfirst.frc.team5112.robot.commands.RotateDrivetrainCounterclockwise;
+import org.usfirst.frc.team5112.robot.commands.Stop;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class OI {
-	//// CREATING BUTTONS
-	// One type of button is a joystick button which is any button on a
-	//// joystick.
-	// You create one by telling it which joystick it's on and which button
-	// number it is.
-	// Joystick stick = new Joystick(port);
-	// Button button = new JoystickButton(stick, buttonNumber);
+	
+	public static Joystick joystick;
+	public static JoystickButton joystickButtonThree;
+	public static JoystickButton joystickButtonFour;
+	public static JoystickButton joystickButtonFive;
+	public static JoystickButton joystickButtonSix;
+	public static JoystickButton joystickButtonSeven;
+	public static JoystickButton joystickButtonEight;
+	public static JoystickButton joystickButtonNine;
+	public static JoystickButton joystickButtonTen;
+	public static JoystickButton joystickButtonEleven;
+	public static JoystickButton joystickButtonTwelve;
 
-	// There are a few additional built in buttons you can use. Additionally,
-	// by subclassing Button you can create custom triggers and bind those to
-	// commands the same as any other Button.
-
-	//// TRIGGERING COMMANDS WITH BUTTONS
-	// Once you have a button, it's trivial to bind it to a button in one of
-	// three ways:
-
-	// Start the command when the button is pressed and let it run the command
-	// until it is finished as determined by it's isFinished method.
-	// button.whenPressed(new ExampleCommand());
-
-	// Run the command while the button is being held down and interrupt it once
-	// the button is released.
-	// button.whileHeld(new ExampleCommand());
-
-	// Start the command when the button is released and let it run the command
-	// until it is finished as determined by it's isFinished method.
-	// button.whenReleased(new ExampleCommand());
+	
+	public OI() {
+		joystick = new Joystick(0);
+		
+		joystickButtonThree  = new JoystickButton(joystick, 3);
+		joystickButtonThree.whenPressed(new IncreaseDrivetrainSpeed());
+		joystickButtonFour  = new JoystickButton(joystick, 4);
+		joystickButtonFour.whenPressed(new DecreaseDrivetrainSpeed());
+		joystickButtonFive  = new JoystickButton(joystick, 5);
+		joystickButtonFive.whileHeld(new DriveForwards());
+		joystickButtonSix  = new JoystickButton(joystick, 6);
+		joystickButtonSix.whileHeld(new DriveBackwards());
+		joystickButtonSeven  = new JoystickButton(joystick, 7);
+		joystickButtonSeven.whenPressed(new RotateDrivetrainClockwise());
+		joystickButtonEight  = new JoystickButton(joystick, 8);
+		joystickButtonEight.whileHeld(new RotateDrivetrainCounterclockwise());
+		joystickButtonNine  = new JoystickButton(joystick, 9);
+		joystickButtonNine.whileHeld(new Stop());
+		joystickButtonTen  = new JoystickButton(joystick, 10);
+		joystickButtonEleven  = new JoystickButton(joystick, 11);
+		joystickButtonTwelve  = new JoystickButton(joystick, 12);
+		
+		SmartDashboard.putNumber("Drivetrain Speed: ", Robot.drivetrain.speed);
+		SmartDashboard.putNumber("Drivetrain Speed Interval: ", Robot.drivetrain.interval);
+	}
 }
