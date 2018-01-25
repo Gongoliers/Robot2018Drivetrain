@@ -5,15 +5,12 @@ import org.usfirst.frc.team5112.robot.RobotMap;
 import org.usfirst.frc.team5112.robot.commands.OperatorControl;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Drivetrain extends Subsystem {
-	public static VictorSP rightMotorController = RobotMap.rightMotorController;
-	public static VictorSP leftMotorController = RobotMap.leftMotorController;
-	public static DifferentialDrive diffDrive = RobotMap.diffDrive;
+	private final DifferentialDrive diffDrive = RobotMap.diffDrive;
 	public double throttle = 0.6;
 	public double speed = 0;
 	public double interval = 0.05;
