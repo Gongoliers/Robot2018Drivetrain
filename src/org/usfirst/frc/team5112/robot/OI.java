@@ -15,6 +15,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class OI {
 	
 	public static Joystick joystick;
+	public static LogitechController controller;
+	
 	public static JoystickButton joystickButtonThree;
 	public static JoystickButton joystickButtonFour;
 	public static JoystickButton joystickButtonFive;
@@ -25,10 +27,10 @@ public class OI {
 	public static JoystickButton joystickButtonTen;
 	public static JoystickButton joystickButtonEleven;
 	public static JoystickButton joystickButtonTwelve;
-
 	
 	public OI() {
 		joystick = new Joystick(0);
+		controller = new LogitechController(1);
 		
 		joystickButtonThree  = new JoystickButton(joystick, 3);
 		joystickButtonThree.whenPressed(new IncreaseDrivetrainSpeed());
@@ -42,12 +44,24 @@ public class OI {
 		joystickButtonSeven.whenPressed(new RotateDrivetrainClockwise());
 		joystickButtonEight  = new JoystickButton(joystick, 8);
 		joystickButtonEight.whileHeld(new RotateDrivetrainCounterclockwise());
-//		joystickButtonNine  = new JoystickButton(joystick, 9);
-//		joystickButtonNine.whileHeld(new Stop());
-	
+		joystickButtonNine  = new JoystickButton(joystick, 9);
+		joystickButtonNine.whileHeld(new Stop());	
 		joystickButtonTen  = new JoystickButton(joystick, 10);
 		joystickButtonEleven  = new JoystickButton(joystick, 11);
 		joystickButtonTwelve  = new JoystickButton(joystick, 12);
+		
+		
+//		controller.buttonA
+//		controller.buttonB
+//		controller.buttonX
+//		controller.buttonY
+//		controller.leftTrigger
+//		controller.rightTrigger
+//		controller.buttonBack
+//		controller.buttonStart
+//		controller.buttonJoystickLeft
+//		controller.buttonJoystickRight
+		
 		
 		SmartDashboard.putNumber("Drivetrain Speed: ", Robot.drivetrain.speed);
 		SmartDashboard.putNumber("Drivetrain Speed Interval: ", Robot.drivetrain.interval);
