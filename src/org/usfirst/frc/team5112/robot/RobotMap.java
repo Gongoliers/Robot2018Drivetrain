@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class RobotMap {
 	public static VictorSP rightMotorController;
 	public static VictorSP leftMotorController;
-	public static DifferentialDrive diffDrive;
+	public static DifferentialDrive differentialDrive;
 	
 	public static void init() {
 		rightMotorController = new VictorSP(0);
@@ -14,12 +14,13 @@ public class RobotMap {
 		leftMotorController = new VictorSP(1);
 		leftMotorController.setInverted(true);
 		
-		diffDrive = new DifferentialDrive(leftMotorController, rightMotorController);
+		differentialDrive = new DifferentialDrive(leftMotorController, rightMotorController);
 		
-		diffDrive.setSafetyEnabled(true);
-		diffDrive.setExpiration(0.1);
-		diffDrive.setMaxOutput(1.0);
-
+		differentialDrive.setSafetyEnabled(false);
+		differentialDrive.setExpiration(0.1);
+		differentialDrive.setMaxOutput(1.0);
+		
+		differentialDrive.arcadeDrive(0.25, 0);
 
 	}
 }
