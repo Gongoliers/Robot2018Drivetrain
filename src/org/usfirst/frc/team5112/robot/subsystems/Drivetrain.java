@@ -22,8 +22,8 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public void forwards(double speed) {
-//		diffDrive.arcadeDrive(speed, 0);
-		RobotMap.differentialDrive.arcadeDrive(speed, 0);
+		diffDrive.arcadeDrive(speed, 0);
+//		RobotMap.differentialDrive.arcadeDrive(speed, 0);
 	}
 
 	public void backwards(double speed) {
@@ -31,8 +31,8 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public void rotateClockwise(double speed) {
-//		diffDrive.arcadeDrive(0, speed);
-		RobotMap.differentialDrive.arcadeDrive(0, speed);
+		diffDrive.arcadeDrive(0, speed);
+//		RobotMap.differentialDrive.arcadeDrive(0, speed);
 	}
 
 	public void rotateCounterclockwise(double speed) {
@@ -40,8 +40,8 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public void stop() {
-		// diffDrive.stopMotor();
-		RobotMap.differentialDrive.stopMotor();
+		 diffDrive.stopMotor();
+//		RobotMap.differentialDrive.stopMotor();
 	}
 
 	public void setSpeed(double inte) {
@@ -56,7 +56,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	public void setTurbo(Joystick joystick) {
-		if (joystick.getRawButtonPressed(1)) {
+		if (joystick.getRawButton(1)) {
 			throttle = 1.0;
 		} else {
 			throttle = 0.6;
@@ -66,11 +66,11 @@ public class Drivetrain extends Subsystem {
 	public void operatorControl(Joystick joystick) {
 		setTurbo(joystick);
 		if (joystick.getY() > 0.1 || joystick.getY() < -0.1) {
-//			diffDrive.arcadeDrive((joystick.getY() - 0.1) * 10 / 9 * throttle, 0);
-			RobotMap.differentialDrive.arcadeDrive((joystick.getY() - 0.1) * 10 / 9 * throttle, 0);
+			diffDrive.arcadeDrive((joystick.getY() - 0.1) * 10 / 9 * throttle, 0);
+//			RobotMap.differentialDrive.arcadeDrive((joystick.getY() - 0.1) * 10 / 9 * throttle, 0);
 		} else {
-//			diffDrive.arcadeDrive(0, joystick.getY());
-			RobotMap.differentialDrive.arcadeDrive(0, joystick.getY());
+			diffDrive.arcadeDrive(0, joystick.getY());
+//			RobotMap.differentialDrive.arcadeDrive(0, joystick.getY());
 		}
 	}
 }
