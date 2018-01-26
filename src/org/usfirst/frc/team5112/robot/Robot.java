@@ -11,8 +11,9 @@ import org.usfirst.frc.team5112.robot.commands.Autonomous;
 import org.usfirst.frc.team5112.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot {
-	public static Drivetrain drivetrain = new Drivetrain();
 	public static OI m_oi;
+	public static Drivetrain drivetrain 
+			= new Drivetrain();
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -21,6 +22,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		RobotMap.init();
 		m_oi = new OI();
+//		drivetrain = new Drivetrain();
 		m_chooser.addDefault("Default Auto", new Autonomous());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);

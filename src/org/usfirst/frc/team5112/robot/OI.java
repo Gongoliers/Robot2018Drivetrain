@@ -42,8 +42,9 @@ public class OI {
 		joystickButtonSeven.whenPressed(new RotateDrivetrainClockwise());
 		joystickButtonEight  = new JoystickButton(joystick, 8);
 		joystickButtonEight.whileHeld(new RotateDrivetrainCounterclockwise());
-		joystickButtonNine  = new JoystickButton(joystick, 9);
-		joystickButtonNine.whileHeld(new Stop());
+//		joystickButtonNine  = new JoystickButton(joystick, 9);
+//		joystickButtonNine.whileHeld(new Stop());
+	
 		joystickButtonTen  = new JoystickButton(joystick, 10);
 		joystickButtonEleven  = new JoystickButton(joystick, 11);
 		joystickButtonTwelve  = new JoystickButton(joystick, 12);

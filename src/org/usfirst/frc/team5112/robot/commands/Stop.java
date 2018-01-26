@@ -15,15 +15,13 @@ public class Stop extends Command {
     }
 
     protected void execute() {
-    	Robot.drivetrain.stop();
     }
 
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     protected void end() {
-    	Robot.drivetrain.stop();
     }
 
     protected void interrupted() {
