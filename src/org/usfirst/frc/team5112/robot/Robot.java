@@ -13,6 +13,7 @@ import org.usfirst.frc.team5112.robot.subsystems.Drivetrain;
 public class Robot extends TimedRobot {
 	public static OI m_oi;
 	public static Drivetrain drivetrain;
+//	public static Drivetrain drivetrain = new Drivetrain();
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
