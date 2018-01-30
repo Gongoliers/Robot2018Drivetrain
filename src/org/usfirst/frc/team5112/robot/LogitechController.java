@@ -21,11 +21,11 @@ public class LogitechController extends Joystick {
 		super(port);
 	}
 	
-	public double getLeftXAxis() {
+	public double getDPadXAxis() {
 		return getRawAxis(0);
 	}
 
-	public double getLeftYAxis() {
+	public double getDPadYAxis() {
 		return getRawAxis(1);
 	}
 
@@ -38,11 +38,11 @@ public class LogitechController extends Joystick {
 	}
 
 	public double getRightXAxis() {
-		return getRawAxis(0);
+		return getRawAxis(4);
 	}
 
 	public double getRightYAxis() {
-		return getRawAxis(0);
+		return getRawAxis(5);
 	}
 
 	public final Trigger leftTrigger = new Trigger() {
@@ -61,14 +61,14 @@ public class LogitechController extends Joystick {
 		}
 	};
 	
-	public static final int DPAD_NORTH = 0;
-	public static final int DPAD_NORTHEAST = 45;
-	public static final int DPAD_EAST = 90;
-	public static final int DPAD_SOUTHEAST = 135;
-	public static final int DPAD_SOUTH = 180;
-	public static final int DPAD_SOUTHWEST = 225;
-	public static final int DPAD_WEST = 270;
-	public static final int DPAD_NORTHWEST = 315;
+	public static final int LJOYSTICK_NORTH = 0;
+	public static final int LJOYSTICK_NORTHEAST = 45;
+	public static final int LJOYSTICK_EAST = 90;
+	public static final int LJOYSTICK_SOUTHEAST = 135;
+	public static final int LJOYSTICK_SOUTH = 180;
+	public static final int LJOYSTICK_SOUTHWEST = 225;
+	public static final int LJOYSTICK_WEST = 270;
+	public static final int LJOYSTICK_NORTHWEST = 315;
 
 
 	public final Trigger DPAD_UP = new Trigger() {

@@ -1,31 +1,30 @@
 package org.usfirst.frc.team5112.robot.commands;
 
-import org.usfirst.frc.team5112.robot.OI;
 import org.usfirst.frc.team5112.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class OperatorControl extends Command {
+public class ChangeOperatorControlController extends Command {
 
-    public OperatorControl() {
+    public ChangeOperatorControlController() {
     	requires(Robot.drivetrain);
     }
 
     protected void initialize() {
+    	Robot.drivetrain.stop();
     }
 
     protected void execute() {
-    	Robot.drivetrain.operatorControl(OI.joystick, OI.controller, Robot.drivetrain.type);
+    	Robot.drivetrain.changeControllerType();
     }
 
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     protected void end() {
     }
 
     protected void interrupted() {
-    	Robot.drivetrain.stop();
     }
 }

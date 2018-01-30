@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5112.robot;
 
+import org.usfirst.frc.team5112.robot.commands.ChangeOperatorControlController;
 import org.usfirst.frc.team5112.robot.commands.DecreaseDrivetrainSpeed;
 import org.usfirst.frc.team5112.robot.commands.DriveBackwards;
 import org.usfirst.frc.team5112.robot.commands.DriveForwards;
@@ -51,7 +52,7 @@ public class OI {
 		joystickButtonTwelve  = new JoystickButton(joystick, 12);
 		
 		
-//		controller.buttonA
+		controller.buttonA.whenPressed(new ChangeOperatorControlController());
 //		controller.buttonB
 //		controller.buttonX
 //		controller.buttonY
