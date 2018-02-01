@@ -38,13 +38,13 @@ public class OI {
 		joystickButtonFour  = new JoystickButton(joystick, 4);
 		joystickButtonFour.whenPressed(new DecreaseDrivetrainSpeed());
 		joystickButtonFive  = new JoystickButton(joystick, 5);
-		joystickButtonFive.whileHeld(new DriveForwards());
+		joystickButtonFive.whenPressed(new DriveForwards());
 		joystickButtonSix  = new JoystickButton(joystick, 6);
-		joystickButtonSix.whileHeld(new DriveBackwards());
+		joystickButtonSix.whenPressed(new DriveBackwards());
 		joystickButtonSeven  = new JoystickButton(joystick, 7);
 		joystickButtonSeven.whenPressed(new RotateDrivetrainClockwise());
 		joystickButtonEight  = new JoystickButton(joystick, 8);
-		joystickButtonEight.whileHeld(new RotateDrivetrainCounterclockwise());
+		joystickButtonEight.whenPressed(new RotateDrivetrainCounterclockwise());
 		joystickButtonNine  = new JoystickButton(joystick, 9);
 		joystickButtonNine.whileHeld(new Stop());	
 		joystickButtonTen  = new JoystickButton(joystick, 10);

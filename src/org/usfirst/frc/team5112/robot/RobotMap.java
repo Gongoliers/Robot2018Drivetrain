@@ -10,9 +10,9 @@ public class RobotMap {
 	
 	public static void init() {
 		rightMotorController = new VictorSP(0);
-		rightMotorController.setInverted(true);
+		rightMotorController.setInverted(false);
 		leftMotorController = new VictorSP(1);
-		leftMotorController.setInverted(true);
+		leftMotorController.setInverted(false);
 		
 		differentialDrive = new DifferentialDrive(leftMotorController, rightMotorController);
 		

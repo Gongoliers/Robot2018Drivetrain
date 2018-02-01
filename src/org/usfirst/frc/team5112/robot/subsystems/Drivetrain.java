@@ -18,13 +18,14 @@ public class Drivetrain extends Subsystem {
 	public double interval = 0.05;
 	public int type = 0;
 
+
 	public void initDefaultCommand() {
 		setDefaultCommand(new OperatorControl());
 		// setDefaultCommand(new Stop());
 	}
 
 	public void forwards(double speed) {
-		diffDrive.arcadeDrive(speed, 0);
+		diffDrive.arcadeDrive(-speed, 0);
 	}
 
 	public void backwards(double speed) {

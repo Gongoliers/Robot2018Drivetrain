@@ -11,11 +11,9 @@ public class DecreaseDrivetrainSpeed extends Command {
     }
 
     protected void initialize() {
-    	Robot.drivetrain.stop();
     }
 
     protected void execute() {
-    	Robot.drivetrain.stop();
     	Robot.drivetrain.setSpeed(-1 * Robot.drivetrain.interval);
     }
 
@@ -24,10 +22,8 @@ public class DecreaseDrivetrainSpeed extends Command {
     }
 
     protected void end() {
-    	Robot.drivetrain.stop();
     }
 
     protected void interrupted() {
-    	Robot.drivetrain.stop();
     }
 }

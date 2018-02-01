@@ -11,7 +11,6 @@ public class DriveForwards extends Command {
     }
 
     protected void initialize() {
-    	Robot.drivetrain.stop();
     }
 
     protected void execute() {
@@ -19,13 +18,12 @@ public class DriveForwards extends Command {
     }
 
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     protected void end() {
     }
 
     protected void interrupted() {
-    	Robot.drivetrain.stop();
     }
 }
