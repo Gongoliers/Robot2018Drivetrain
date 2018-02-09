@@ -8,11 +8,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team5112.robot.commands.Autonomous;
-import org.usfirst.frc.team5112.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team5112.robot.subsystems.*;;
+
 
 public class Robot extends TimedRobot {
 	public static OI m_oi;
 	public static Drivetrain drivetrain;
+	public static Intake intake;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -21,6 +23,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		RobotMap.init();
 		drivetrain = new Drivetrain();
+		intake = new Intake();
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new Autonomous());
 		// chooser.addObject("My Auto", new MyAutoCommand());

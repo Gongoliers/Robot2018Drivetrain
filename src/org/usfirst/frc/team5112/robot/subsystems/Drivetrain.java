@@ -1,20 +1,22 @@
 package org.usfirst.frc.team5112.robot.subsystems;
 
 import org.usfirst.frc.team5112.robot.LogitechController;
-import org.usfirst.frc.team5112.robot.Robot;
 import org.usfirst.frc.team5112.robot.RobotMap;
-import org.usfirst.frc.team5112.robot.commands.OperatorControl;
-import org.usfirst.frc.team5112.robot.commands.Stop;
+import org.usfirst.frc.team5112.robot.commands.drivetrain.OperatorControl;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+/**
+ * The Drivetrain subsystem controls the chassis and wheels
+ * that acutally move the entire body of the robot.
+ */
 public class Drivetrain extends Subsystem {
-	private final DifferentialDrive diffDrive = RobotMap.differentialDrive;
-	public static double throttle = 0.6;
-	public static double speed = 0;
+	private final DifferentialDrive diffDrive = RobotMap.diffDrive;
+	public double throttle = 0.6;
+	public double speed = 0;
 	public double interval = 0.05;
 	public int type = 0;
 
@@ -52,7 +54,7 @@ public class Drivetrain extends Subsystem {
 		} else {
 			speed += inte;
 		}
-		SmartDashboard.putNumber("Drivetrain Speed: ", Robot.drivetrain.speed);
+		SmartDashboard.putNumber("Drivetrain Speed: ", speed);
 	}
 
 	public void setTurbo(Joystick joystick, LogitechController controller) {
