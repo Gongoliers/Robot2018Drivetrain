@@ -89,5 +89,7 @@ public class Drivetrain extends Subsystem {
 				diffDrive.arcadeDrive(0, controller.getRightXAxis() * throttle);
 			}
 		}
+		SmartDashboard.putNumber("Left Encoder Distance", RobotMap.encoderLeft.getDistance());
+
 	}
 }

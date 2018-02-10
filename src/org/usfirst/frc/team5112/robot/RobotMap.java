@@ -52,7 +52,7 @@ public class RobotMap {
 		climberRightMotorController.setInverted(true);
 		climberMotorController = new SpeedControllerGroup(climberLeftMotorController, climberRightMotorController);
 		
-		elevatorLeftMotorController.setInverted(false);
+		elevatorLeftMotorController.setInverted(true);
 		elevatorRightMotorController.setInverted(true);
 		elevatorMotorController = new SpeedControllerGroup(elevatorLeftMotorController, elevatorRightMotorController);
 		

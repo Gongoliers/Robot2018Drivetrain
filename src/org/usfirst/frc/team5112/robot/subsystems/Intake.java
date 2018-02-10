@@ -5,6 +5,7 @@ import org.usfirst.frc.team5112.robot.commands.intake.OperatorControlIntake;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The Intake subsystem controls the intake wheels on the third stage
@@ -47,6 +48,7 @@ public class Intake extends Subsystem {
 		} else {
 			speed += interval;
 		}
+    	SmartDashboard.putNumber("Intake Speed: ", speed);
     }
     
     //Allows xbox controller's right joystick's Y movement to control intake wheels in teleop

@@ -1,17 +1,17 @@
-package org.usfirst.frc.team5112.robot.commands.drivetrain;
+package org.usfirst.frc.team5112.robot.commands.elevator;
 
 import org.usfirst.frc.team5112.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Stop extends Command {
+public class LowerToBottom extends Command {
 
-    public Stop() {
-    	requires(Robot.drivetrain);
+    public LowerToBottom() {
+    	requires(Robot.elevator);
     }
 
     protected void initialize() {
-    	Robot.drivetrain.stop();
+    	Robot.elevator.stop();
     }
 
     protected void execute() {
@@ -25,6 +25,5 @@ public class Stop extends Command {
     }
 
     protected void interrupted() {
-    	Robot.drivetrain.stop();
     }
 }

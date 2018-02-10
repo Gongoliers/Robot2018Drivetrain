@@ -1,18 +1,10 @@
 package org.usfirst.frc.team5112.robot;
 
-import org.usfirst.frc.team5112.robot.commands.drivetrain.ChangeOperatorControlController;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.DecreaseDrivetrainSpeed;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.DriveBackwards;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.DriveForwards;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.IncreaseDrivetrainSpeed;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.RotateDrivetrainClockwise;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.RotateDrivetrainCounterclockwise;
-import org.usfirst.frc.team5112.robot.commands.drivetrain.Stop;
-import org.usfirst.frc.team5112.robot.commands.intake.DecreaseSpeedIntake;
-import org.usfirst.frc.team5112.robot.commands.intake.IncreaseSpeedIntake;
-import org.usfirst.frc.team5112.robot.commands.intake.Intake;
-import org.usfirst.frc.team5112.robot.commands.intake.Outtake;
-import org.usfirst.frc.team5112.robot.commands.intake.StopIntake;
+import org.usfirst.frc.team5112.robot.commands.drivetrain.*;
+import org.usfirst.frc.team5112.robot.commands.intake.*;
+import org.usfirst.frc.team5112.robot.commands.elevator.*;
+import org.usfirst.frc.team5112.robot.commands.climber.*;
+
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -65,23 +57,23 @@ public class OI {
 		jB12 = new JoystickButton(joystickExtreme, 12);
 		
 		//Climber Commands
-//		SmartDashboard.putData("Stop CLimber", new StopClimber());
+		SmartDashboard.putData("Stop CLimber", new StopClimber());
 		
 		//Drivetrain Commands
-//		SmartDashboard.putData("Drivetrain Backwards", new Backwards());
-//		SmartDashboard.putData("Drivetrain Forwards", new Forwards());
-//		SmartDashboard.putData("Decrease Drivetrain Speed", new DecreaseSpeed());
-//		SmartDashboard.putData("Increase Drivetrain Speed", new IncreaseSpeed());
-//		SmartDashboard.putData("Rotate Drivetrain Counterclockwise", new RotateCCW());
-//		SmartDashboard.putData("Rotate Drivetrain Clockwise", new RotateCW());
-//		SmartDashboard.putData("Stop Drivetrain", new StopDrivetrain());
+		SmartDashboard.putData("Drivetrain Backwards", new DriveBackwards());
+		SmartDashboard.putData("Drivetrain Forwards", new DriveForwards());
+		SmartDashboard.putData("Decrease Drivetrain Speed", new DecreaseDrivetrainSpeed());
+		SmartDashboard.putData("Increase Drivetrain Speed", new IncreaseDrivetrainSpeed());
+		SmartDashboard.putData("Rotate Drivetrain Counterclockwise", new RotateDrivetrainCounterclockwise());
+		SmartDashboard.putData("Rotate Drivetrain Clockwise", new RotateDrivetrainClockwise());
+		SmartDashboard.putData("Stop Drivetrain", new StopDrivetrain());
 		
 		//Elevator Commands
-//		SmartDashboard.putData("Lower Elevator To Bottom Position", new LowerToBottom());
-//		SmartDashboard.putData("Lower Elevator To Switch Position", new LowerToSwitch());
-//		SmartDashboard.putData("Raise Elevator To Switch", new RaiseToSwitch());
-//		SmartDashboard.putData("Raise Elevator To Scale", new RaiseToScale());
-//		SmartDashboard.putData("Raise Elevator To Top", new RaiseToTop());
+		SmartDashboard.putData("Lower Elevator To Bottom Position", new LowerToBottom());
+		SmartDashboard.putData("Lower Elevator To Switch Position", new LowerToSwitch());
+		SmartDashboard.putData("Raise Elevator To Switch", new RaiseToSwitch());
+		SmartDashboard.putData("Raise Elevator To Scale", new RaiseToScale());
+		SmartDashboard.putData("Raise Elevator To Top", new RaiseToTop());
 		
 		//Intake Commands
 		SmartDashboard.putData("Decrease Intake Speed", new DecreaseSpeedIntake());
